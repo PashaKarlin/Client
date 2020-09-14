@@ -1,12 +1,12 @@
 .header{
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     background-color: green;
     width: auto;
     height: 100px;
     /* padding: 40px; */
-}
+ }
 .button_position{
     padding-top : 30px;
     margin : 0 10px 0 10px; 
-}
+} 
