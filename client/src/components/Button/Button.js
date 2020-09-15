@@ -5,7 +5,7 @@ import './Button.css'
 const Button = (props) =>{
     return(
         <div>
-            <button className = 'button_like_google' >{props.name}</button>
+            <button className = 'button_like_google' onClick = {props.buttonFunc}>{props.name}</button>
         </div>
     )
 }

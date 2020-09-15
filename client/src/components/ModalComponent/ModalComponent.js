@@ -4,16 +4,16 @@ import '../Button/Button.css'
 
 Modal.setAppElement('#root')
 
-let ModalComponent = () => {
+let ModalComponent = (props) => {
     const [modalIsOpen,setmodalIsOpen] = useState(false)
     return(
         <div className = 'button_position'>
-            <button className = {'button_like_google'} onClick ={() =>setmodalIsOpen(true)}>Open Modal </button>
+            <button className = {'button_like_google'} onClick ={() =>setmodalIsOpen(true)}>{props.nameOfModal} </button>
             <Modal isOpen = {modalIsOpen} 
             onRequestClose = {() => setmodalIsOpen(false)}>
-                <h2>Modal Title</h2>
-                <p>Modal Body</p>
+                <h2>{props.nameOfModal}</h2>
                 <div>
+                    {props.modalData}
                     <button onClick ={() => setmodalIsOpen(false) }>Close</button>
                 </div>
             </Modal>

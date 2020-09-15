@@ -1,6 +1,6 @@
 .header{
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     background-color: green;
     width: auto;
     height: 100px;
@@ -10,3 +10,12 @@
     padding-top : 30px;
     margin : 0 10px 0 10px; 
 } 
+.header_buttons {
+    display:flex;
+    justify-content: flex-end;
+}
+.header_uploader{
+    display: flex;
+    padding-top : 30px;
+
+}

@@ -1,17 +1,17 @@
 .button_like_google {
-    display: inline-block;
-    font-family: arial,sans-serif;
-    font-size: 11px;
-    font-weight: bold;
-    color: rgb(68,68,68);
-    text-decoration: none;
-    user-select: none;
-    padding: .2em 1.2em;
-    outline: none;
-    border: 1px solid rgba(0,0,0,.1);
-    border-radius: 2px;
-    background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
-    transition: all .218s ease 0s;
+      display: inline-block;
+      font-family: arial,sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      color: rgb(68,68,68);
+      text-decoration: none;
+      user-select: none;
+      padding: .2em 1.2em;
+      outline: none;
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 2px;
+      background: rgb(245,245,245) linear-gradient(#f4f4f4, #f1f1f1);
+      transition: all .218s ease 0s;
   }
 .button_like_google:hover {
     color: rgb(24,24,24);
