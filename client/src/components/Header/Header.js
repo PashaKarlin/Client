@@ -5,6 +5,7 @@ import ModalComponent from '../ModalComponent/ModalComponent';
 import Form from '../Form/Form';
 import Uploader from '../Uploader/Uploader';
 import DeleteForm from '../DeleteForm/DeleteForm';
+import SearchTitle from '../SearchTitle/searchtitle';
 
 
 let Header = () => {
@@ -15,9 +16,8 @@ let Header = () => {
                 <div className='button_position'>
                     <Button name={'Sort Film(Alphabet)'} />
                 </div>
-                <div className='button_position'>
-                    <Button name={'Find a movie(name)'} />
-                </div>
+                <ModalComponent nameOfModal = 'Find a movie(name)'
+                modalData = {<SearchTitle/>}/>
                 <div className='button_position'>
                     <Button name={'Find a movie(actor)'} />
                 </div>
