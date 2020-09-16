@@ -4,6 +4,7 @@ import './Header.css'
 import ModalComponent from '../ModalComponent/ModalComponent';
 import Form from '../Form/Form';
 import Uploader from '../Uploader/Uploader';
+import DeleteForm from '../DeleteForm/DeleteForm';
 
 
 let Header = () => {
@@ -11,7 +12,6 @@ let Header = () => {
         <div className='header'>
             <div className='header_buttons'>
                 <ModalComponent nameOfModal={'Add Film'} modalData={<Form />} />
-                
                 <div className='button_position'>
                     <Button name={'Sort Film(Alphabet)'} />
                 </div>
@@ -21,9 +21,10 @@ let Header = () => {
                 <div className='button_position'>
                     <Button name={'Find a movie(actor)'} />
                 </div>
+                <ModalComponent nameOfModal='Delete Film' modalData ={<DeleteForm/>}/>
             </div>
-            <div className='header_uploader'>
-                <Uploader />
+            <div >
+                <ModalComponent nameOfModal={'Upload File'} modalData={<Uploader />} />
             </div>
 
 

@@ -1,7 +1,7 @@
 .header{
     display: flex;
     /* justify-content: flex-end; */
-    background-color: green;
+    background-color: rgb(214, 71, 27);
     width: auto;
     height: 100px;
     /* padding: 40px; */
@@ -14,8 +14,9 @@
     display:flex;
     justify-content: flex-end;
 }
-.header_uploader{
-    display: flex;
-    padding-top : 30px;
-
+.modal_window{
+    margin-left: 35%;
+    height: 200px;
+    width: 300px;
+    background-color: #7FFFD4;
 }

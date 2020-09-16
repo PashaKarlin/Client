@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Uploader from './components/Uploader/Uploader';
+import IncomingData from './components/IncomingData/IncomingData';
 
 function App() {
   
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Uploader/>
+      <IncomingData/>
     </div>
   );
 }

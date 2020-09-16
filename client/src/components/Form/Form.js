@@ -20,46 +20,34 @@ class Form extends React.Component {
         let arr = value.split(',')
         this.setState({ [name]: arr })
     }
+
     addform = (e) => {
         e.preventDefault();
-        // let dataState = `{"title": "${this.state.title}", "releaseYear": "${this.state.releaseYear}","format":"${this.state.format}","stars": ${this.state.stars}}`
-        console.log([...this.state.stars])
-        // let dataState = {...this.state, "stars" :[...this.state.stars]}
-        axios.post('http://localhost:4000/api/films/', {
-            title: this.state.title,
-            releaseYear: this.state.releaseYear,
-            format: this.state.format,
-            stars: [...this.state.stars]
-        }).then(
-            function (response) {
-                if (response.status === 200) {
-                    console.log('response')
+        if (window.confirm('Are you sure?')) {
+            axios.post('http://ec2-18-216-40-193.us-east-2.compute.amazonaws.com:4000/api/films', {
+                title: this.state.title,
+                releaseYear: this.state.releaseYear,
+                format: this.state.format,
+                stars: [...this.state.stars]
+            }).then(
+                function (response) {
+                    if (response.status === 200) {
+                        console.log('response')
+                    }
                 }
-            }
-        ).catch(
-            function (error) {
-                if (error.response.status === 404) {
-                    console.log(error)
-                };
-            });
-
-        // axios({
-        //     type: 'GET',
-        //     url: 'http://localhost:4000/api/films/',
-        //     crossDomain: true,
-        //     data: dataState,
-        //     dataType: 'json',
-        //     mode: 'same-origin',
-        //     headers: {
-        //         'Access-Control-Allow-Origin': '*',
-        //         'Content-Type': 'object',
-        //         'Access-Control-Allow-Credentials': true,
-        //         "Access-Control-Allow-Methods": 'OPTIONS,GET,POST,DELETE',
-        //         "Access-Control-Allow-Headers": "Origin, X-Requested-With,X-HTTP-Method-Override, Content-Type, Accept, Version, Authorization,X-XSRF-TOKEN, Content-Type"
-        //     },
-        //     withCredentials: true,
-        //     credentials: 'same-origin'
-        // }).then(response => {(console.log(response))})
+            ).catch(
+                function (error) {
+                    if (error.response.status === 404) {
+                        console.log(error)
+                    };
+                });
+        }
+        this.setState({
+            title: '',
+            releaseYear: '',
+            format: '',
+            stars: []
+        })
     }
     render() {
         const { title, releaseYear, format, stars } = this.state
@@ -87,7 +75,9 @@ class Form extends React.Component {
                         Stars
                         <input name='stars' value={stars} onChange={this.changeArr} required={true} id={'entry'} />
                     </div>
-                    <button onClick={this.addform}>Add Film</button>
+                    <button onClick={this.addform}>Add</button>
+
+
                 </form>
             </div>
         )
