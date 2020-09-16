@@ -1,10 +1,13 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
+import ModalComponent from '../ModalComponent/ModalComponent'
 import ShowFilm from './showFilm'
+
 
 
 class SearchTitle extends React.Component {
     state = {
+        condition: false,
         title: '',
         arrayFilms: [],
         arr: [],
@@ -14,8 +17,8 @@ class SearchTitle extends React.Component {
         axios.get('http://ec2-18-216-40-193.us-east-2.compute.amazonaws.com:4000/api/films')
             .then(response => {
                 // console.log(Object.values(response))
-                this.setState({ data: Object.values(response) });
-                this.setState({ arrayFilms: this.state.data[0] });
+                this.setState({ data: [...Object.values(response)] });
+                this.setState({ arrayFilms: [...this.state.data[0]] });
             })
     }
     change = (e) => {
@@ -30,19 +33,19 @@ class SearchTitle extends React.Component {
                 array.push(film);
                 this.setState({ arr: [...array] }, () => {
                     console.log(this.state.arr)
+                    this.setState({ condition: 'Success' }, () => {
+                        console.log(this.state.condition)
+                    })
                 })
                 this.handleChangeIsArrEmpty();
             }
         })
     }
     handleChangeIsArrEmpty = (e) => {
-        this.setState({ isArrEmpty: false }, () => {
-            console.log(this.state.isArrEmpty)
-            console.log(this.state)
-        })
+        this.setState({ isArrEmpty: false })
     }
 
-    
+
     render() {
         return (
             <div>
@@ -56,18 +59,20 @@ class SearchTitle extends React.Component {
                 </div>
                 <button onClick={this.findMovie}>Find movie</button>
                 <div>
-                    
-                    <ShowFilm
-                        isArrEmpty = {this.state.isArrEmpty} 
-                        title={this.state.arr.title}
-                        releaseYear={this.state.arr.releaseYear}
-                        format={this.state.arr.format}
-                        stars={this.state.arr.stars}
-                    />
+                    {this.state.condition
+                        ? <ModalComponent
+                            nameOfModal={'Results'}
+                            modalData={<ShowFilm
+                                title={this.state.title}
+                                releaseYear={this.state.arr[0].releaseYear}
+                                format={this.state.arr[0].format}
+                                stars={[this.state.arr[0].stars]} />} />
+                        : <div />}
+
                 </div>
             </div>
-        )
-    }
+        );
+    };
 };
 
 export default SearchTitle;

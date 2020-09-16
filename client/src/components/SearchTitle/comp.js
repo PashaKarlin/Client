@@ -1,13 +1,26 @@
 import React from 'react';
 
 let Comp = (props) => {
-
+    
     return (
         <div>
-            <p>{props.title}</p>
-            <p>{props.releaseYear}</p>
-            <p>{props.format}</p>
-            <p>{props.stars}</p>
+            <div>
+                Title: 
+                {props.title}
+            </div>
+            <div>
+                Release Year: 
+                {props.releaseYear}
+            </div>
+            <div>
+                Format: 
+                {props.format}
+            </div>
+            <div>
+                Stars: 
+                {props.stars + ','}
+            </div>
+            
         </div>
     )
 }
