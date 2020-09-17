@@ -10,8 +10,7 @@ class SearchTitle extends React.Component {
         condition: false,
         title: '',
         arrayFilms: [],
-        arr: [],
-        isArrEmpty: true
+        arr: []
     }
     componentDidMount() {
         axios.get('http://ec2-18-216-40-193.us-east-2.compute.amazonaws.com:4000/api/films')
@@ -33,17 +32,14 @@ class SearchTitle extends React.Component {
                 array.push(film);
                 this.setState({ arr: [...array] }, () => {
                     console.log(this.state.arr)
-                    this.setState({ condition: 'Success' }, () => {
+                    this.setState({ condition: true }, () => {
                         console.log(this.state.condition)
                     })
                 })
-                this.handleChangeIsArrEmpty();
             }
         })
     }
-    handleChangeIsArrEmpty = (e) => {
-        this.setState({ isArrEmpty: false })
-    }
+    
 
 
     render() {

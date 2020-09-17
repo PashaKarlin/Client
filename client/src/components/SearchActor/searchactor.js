@@ -32,12 +32,14 @@ class SearchActor extends React.Component {
 
     findMovie = (e) => {
         const enteredStars = this.state;
-        e.preventDefault();
+
+        e.preventDefault()
         this.state.arrayFilms.map(film =>{
             for (let i=0;i<=film.stars.length;i++){
                 for (let j=0;j<=enteredStars.length;j++){
                     if (film.stars[i] === enteredStars[j]){
                         console.log('founded')
+                        this.setState({condition : true});
                     }
                 }
             }

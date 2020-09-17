@@ -14,13 +14,13 @@ let Header = () => {
         <div className='header'>
             <div className='header_buttons'>
                 <ModalComponent nameOfModal={'Add Film'} modalData={<Form />} />
-                <div className='button_position'>
+                {/* <div className='button_position'>
                     <Button name={'Sort Film(Alphabet)'} />
-                </div>
+                </div> */}
                 <ModalComponent nameOfModal = 'Find a movie(name)'
                 modalData = {<SearchTitle/>}/>
-                <ModalComponent nameOfModal = 'Find a movie(actor)'
-                modalData = {<SearchActor/>}/>
+                {/* <ModalComponent nameOfModal = 'Find a movie(actor)'
+                modalData = {<SearchActor/>}/> */}
                 <ModalComponent nameOfModal='Delete Film' modalData ={<DeleteForm/>}/>
             </div>
             <div >

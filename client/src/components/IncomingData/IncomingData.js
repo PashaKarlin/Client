@@ -39,7 +39,7 @@ render() {
     return (
         <div>
             <div className='incoming_data_button_sort'>
-                <button onClick={() => this.setState({ sorted: true }, () => { console.log(this.state.sorted) })}>
+                <button onClick={() => this.setState({ sorted: true }, () => {})}>
                     Sort By Alphabet
                     </button>
                 <button onClick={() => this.setState({ sorted: false }, () => { console.log(this.state.sorted) })}>
