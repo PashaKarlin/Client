@@ -6,6 +6,7 @@ import Form from '../Form/Form';
 import Uploader from '../Uploader/Uploader';
 import DeleteForm from '../DeleteForm/DeleteForm';
 import SearchTitle from '../SearchTitle/searchtitle';
+import SearchActor from '../SearchActor/searchactor';
 
 
 let Header = () => {
@@ -18,9 +19,8 @@ let Header = () => {
                 </div>
                 <ModalComponent nameOfModal = 'Find a movie(name)'
                 modalData = {<SearchTitle/>}/>
-                <div className='button_position'>
-                    <Button name={'Find a movie(actor)'} />
-                </div>
+                <ModalComponent nameOfModal = 'Find a movie(actor)'
+                modalData = {<SearchActor/>}/>
                 <ModalComponent nameOfModal='Delete Film' modalData ={<DeleteForm/>}/>
             </div>
             <div >
