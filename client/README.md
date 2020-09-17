@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### node install 
+### `node install` 
 
 To install the latest version of node, click the link https://nodejs.org/en/.
 
